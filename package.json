@@ -1,16 +1,16 @@
 {
-  "name": "doca-bootstrap-theme",
-  "version": "0.2.1",
-  "description": "Doca theme using Twitter Bootstrap",
+  "name": "doca-node-docson-theme",
+  "version": "0.0.0",
+  "description": "Doca theme using Node-Docson and Twitter Bootstrap",
   "main": "index.js",
-  "author": "Vojtech Miksu <vojtech@miksu.cz>",
+  "author": "Faister Cabrera Carvalho",
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cloudflare/doca-bootstrap-theme"
+    "url": "https://github.com/TexKiller/doca-node-docson-theme"
   },
   "scripts": {
-    "build": "npm run clean && mkdir -p build && babel components --out-dir build",
+    "build": "npm run clean && node -e \"if (!require('fs').existsSync('build')) { require('fs').mkdirSync('build'); }\" && babel components --out-dir build",
     "lint": "eslint components || true",
     "prepublish": "cross-env NODE_ENV=production npm run build",
     "clean": "rimraf build"

@@ -10,6 +10,11 @@ const Head = ({ cssBundle, title }) =>
     />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
     {cssBundle && <link href={cssBundle} rel="stylesheet" />}
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://github.com/TexKiller/node-docson/releases/download/v0.4.6/node-docson.min.js"></script>
+    <script type="text/javascript">
+      var docson = nodeDocson();
+    </script>
   </head>;
 
 

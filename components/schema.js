@@ -1,6 +1,6 @@
 const React = require('react');
 const Endpoint = require('./endpoint');
-const ObjectDefinitionTable = require('./objectDefinitionTable');
+const DocsonDefinitionTable = require('./docsonDefinitionTable');
 const MarkdownPreview = require('react-marked-markdown').MarkdownPreview;
 const ImmutablePropTypes = require('react-immutable-proptypes');
 const Component = require('react-pure-render/component');
@@ -58,20 +58,21 @@ class Schema extends Component {
                           <h4>{obj.get('title')}</h4>
                         </div>
                       }
+                      <DocsonDefinitionTable properties={obj.get('all_props')} required={obj.get('required_props')} />
                       {obj.get('example') && <ExampleObject example={obj.get('example')} />}
-                      <ObjectDefinitionTable definitions={obj.get('all_props')} />
                     </div>
                   )}
                 </div>
               :
                 <div>
+                  <DocsonDefinitionTable
+                    properties={schema.getIn(['object_definition', 'all_props'])}
+                    required={schema.getIn(['object_definition', 'required_props'])}
+                  />
+
                   {schema.getIn(['object_definition', 'example']) &&
                     <ExampleObject example={schema.getIn(['object_definition', 'example'])} />
                   }
-
-                  <ObjectDefinitionTable
-                    definitions={schema.getIn(['object_definition', 'all_props'])}
-                  />
                 </div>
               }
             </div>
@@ -82,7 +83,7 @@ class Schema extends Component {
             .get('links')
             .filter(link => !link.get('private'))
             .valueSeq()
-            .map(link => <Endpoint key={link.get('html_id')} link={link} />)
+            .map(link => <Endpoint key={link.get('html_id')} link={link} obj={schema} />)
           }
         </div>
       </article>

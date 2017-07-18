@@ -1,5 +1,6 @@
 const React = require('react');
 const Component = require('react-pure-render/component');
+const syntaxHighlight = require('../js/functions').syntaxHighlight;
 
 class ExampleObject extends Component {
 
@@ -15,7 +16,7 @@ class ExampleObject extends Component {
           <h5>Example object</h5>
         </div>
         <div>
-          <pre>{example}</pre>
+          <pre className="json" dangerouslySetInnerHTML={{ __html: syntaxHighlight(example)}}></pre>
         </div>
       </div>
     );

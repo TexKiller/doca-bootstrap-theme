@@ -1,10 +1,8 @@
 # doca-node-docson-theme
 
-Simple [Node-Docson](https://github.com/TexKiller/node-docson) based theme for [doca](https://github.com/cloudflare/doca), based on [doca-bootstrap-theme](https://github.com/cloudflare/doca-bootstrap-theme).
+Simple [Node-Docson](https://github.com/TexKiller/node-docson) theme for [doca](https://github.com/cloudflare/doca), based on [doca-bootstrap-theme](https://github.com/cloudflare/doca-bootstrap-theme).
 
 It's supposed to be used in combination with [doca](https://github.com/cloudflare/doca) - a tool that scaffolds API documentation based on JSON HyperSchemas.
-
-Please file any issues at the [doca](https://github.com/cloudflare/doca/issues) repository.
 
 ## Usage
 

@@ -20,7 +20,8 @@
     "build",
     "fonts",
     "styles",
-    "assets"
+    "assets",
+    "js"
   ],
   "dependencies": {
     "immutable": "^3.8.1",

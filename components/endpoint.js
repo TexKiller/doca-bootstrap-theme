@@ -56,7 +56,8 @@ class Endpoint extends Component {
                 <h5>Example request object</h5>
               </div>
               <div>
-                <pre className="json" dangerouslySetInnerHTML={{ __html: syntaxHighlight(link.getIn(['parameters', 'example']))}}></pre>
+                <pre className="json" dangerouslySetInnerHTML={{ __html: syntaxHighlight(link.get('_schema') &&
+                  link.getIn(['_schema', 'example']) || link.getIn(['parameters', 'example']))}}></pre>
               </div>
             </div>
             }

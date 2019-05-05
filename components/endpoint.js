@@ -57,7 +57,7 @@ class Endpoint extends Component {
               </div>
               <div>
                 <pre className="json" dangerouslySetInnerHTML={{ __html: syntaxHighlight(link.get('_schema') &&
-                  JSON.stringify(link.getIn(['_schema', 'example'])) || link.getIn(['parameters', 'example']))}}></pre>
+                  JSON.stringify(link.getIn(['_schema', 'example']), null, 2) || link.getIn(['parameters', 'example']))}}></pre>
               </div>
             </div>
             }

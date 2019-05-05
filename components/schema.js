@@ -33,8 +33,8 @@ class Schema extends Component {
         </div>
         <div className="panel-body">
           <h3>{schema.get('description')}</h3>
-          {schema.get('extended_description') &&
-            <MarkdownPreview value={schema.get('extended_description')} />}
+          {schema.get('cfExtendedDescription') &&
+            <MarkdownPreview value={schema.get('cfExtendedDescription')} />}
 
           <header id={`${schema.get('html_id')}-properties`}>
             {IS_JAVASCRIPT &&
@@ -51,7 +51,7 @@ class Schema extends Component {
             <div>
               {schema.getIn(['object_definition', 'objects']).count() ?
                 <div>
-                  {schema.getIn(['object_definition', 'objects']).valueSeq().map(obj =>
+                  {schema.getIn(['object_definition', 'objects']).valueSeq().map((obj, index) =>
                     <div key={obj.get('title')}>
                       {obj.get('title') &&
                         <div>
@@ -81,7 +81,7 @@ class Schema extends Component {
         <div className="list-group">
           {schema
             .get('links')
-            .filter(link => !link.get('private'))
+            .filter(link => !link.get('cfPrivate'))
             .valueSeq()
             .map(link => <Endpoint key={link.get('html_id')} link={link} obj={schema} />)
           }

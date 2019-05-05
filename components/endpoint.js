@@ -34,6 +34,8 @@ class Endpoint extends Component {
               schema={
                 link.get('_schema')
               }
+              contextId={link.get('title')}
+              fieldPointer="/properties"
             />
             }
             {!link.get('_schema') &&
@@ -44,6 +46,8 @@ class Endpoint extends Component {
               required={
                 link.getIn(['parameters', 'required_props'])
               }
+              contextId={link.get('title')}
+              fieldPointer="/properties"
             />
             }
             {link.getIn(['parameters', 'example']) &&

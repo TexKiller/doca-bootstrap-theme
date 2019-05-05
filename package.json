@@ -1,6 +1,6 @@
 {
   "name": "doca-node-docson-theme",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Doca theme using Node-Docson and Twitter Bootstrap",
   "main": "index.js",
   "author": "Faister Cabrera Carvalho",
@@ -31,6 +31,9 @@
     "react-immutable-proptypes": "^1.7.1",
     "react-marked-markdown": "^1.4.0",
     "react-pure-render": "^1.0.2"
+  },
+  "peerDependencies": {
+    "json-schema-example-loader": "^3.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.8.0",
